@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo de Beba - Eventos</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beba: {
+                            dark: '#0a0a0a',
+                            yellow: '#fcd34d',
+                            orange: '#f97316',
+                            red: '#ef4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        script: ['Dancing Script', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #fcd34d, #f97316, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #fcd34d, #f97316, #ef4444);
+        }
+        .gradient-border {
+            position: relative;
+            background: #0a0a0a;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: linear-gradient(to right, #fcd34d, #f97316, #ef4444);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-sans">
+
+    <header class="fixed w-full z-50 bg-beba-dark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://i.ibb.co/4ZcrKNxF/324406604-100909932883051-2563366318002402510-n.jpg" alt="Lo de Beba Logo" class="h-12 md:h-14 w-auto object-contain rounded-full hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]">
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-300 hover:text-white transition-colors duration-200">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-white transition-colors duration-200">Servicios</a>
+                    <a href="#ubicacion" class="text-gray-300 hover:text-white transition-colors duration-200">Ubicación</a>
+                    <a href="#reservas" class="text-gray-300 hover:text-white transition-colors duration-200">Reservas</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-white transition-colors duration-200">Contacto</a>
+                </nav>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-beba-dark border-b border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Inicio</a>
+                <a href="#servicios" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Servicios</a>
+                <a href="#ubicacion" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Ubicación</a>
+                <a href="#reservas" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Reservas</a>
+                <a href="#contacto" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-beba-dark flex items-center min-h-[80vh]">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0" style="background-image: url('https://i.ibb.co/tpFdXQTs/621855766-18334932811212222-2294504106030855232-n.jpg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0" style="background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95));"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+                <img src="https://i.ibb.co/dwBvCP3w/awdawdawd-02.png" alt="Lo de Beba - Cantina de Sabores" class="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] mx-auto mb-6 drop-shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:scale-105 transition-transform duration-500">
+                <h1 class="sr-only">Lo de Beba - Cantina de Sabores</h1>
+                
+                <div class="mt-2 mb-10 flex flex-col items-center">
+                    <span class="text-3xl md:text-5xl font-black text-white tracking-widest uppercase drop-shadow-lg mb-2">Tu espacio ideal</span>
+                    <span class="text-4xl md:text-6xl font-black gradient-text tracking-widest uppercase drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]">Para eventos</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#reservas" class="gradient-bg text-black font-semibold px-8 py-4 rounded-full hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all transform hover:scale-105 duration-200 text-lg uppercase tracking-wide">Consultar Disponibilidad</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-20 bg-[#111] relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Comodidades Exclusivas</h2>
+                    <div class="w-24 h-1 gradient-bg mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="gradient-border p-8 text-center group hover:-translate-y-2 transition-transform duration-300 bg-[#0a0a0a] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 mx-auto bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-black/20 transition-colors">
+                                <i class="fas fa-users text-3xl text-orange-500 group-hover:text-black transition-colors"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-black transition-colors">Capacidad</h3>
+                            <p class="text-gray-400 group-hover:text-black/80 transition-colors">Espacio amplio y versátil, preparado para recibir cómodamente hasta 50 personas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gradient-border p-8 text-center group hover:-translate-y-2 transition-transform duration-300 bg-[#0a0a0a] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 mx-auto bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-black/20 transition-colors">
+                                <i class="fas fa-utensils text-3xl text-yellow-400 group-hover:text-black transition-colors"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-black transition-colors">Cocina Amplia</h3>
+                            <p class="text-gray-400 group-hover:text-black/80 transition-colors">Totalmente equipada para preparar o calentar tu catering, con gran espacio de trabajo.</p>
+                        </div>
+                    </div>
+
+                    <div class="gradient-border p-8 text-center group hover:-translate-y-2 transition-transform duration-300 bg-[#0a0a0a] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 mx-auto bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-black/20 transition-colors">
+                                <i class="fas fa-restroom text-3xl text-red-500 group-hover:text-black transition-colors"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-black transition-colors">Baños Equipados</h3>
+                            <p class="text-gray-400 group-hover:text-black/80 transition-colors">Instalaciones sanitarias modernas, limpias y listas para la comodidad de tus invitados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ubicacion" class="py-20 bg-beba-dark relative z-10 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">¿Dónde Estamos?</h2>
+                    <p class="text-gray-400 text-lg flex justify-center items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-orange-500"></i> Av. 41 N° 285, B7107 Santa Teresita, Provincia de Buenos Aires
+                    </p>
+                    <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                </div>
+                
+                <div class="w-full max-w-3xl mx-auto h-[300px] md:h-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(249,115,22,0.1)] relative group">
+                    <div class="absolute inset-0 bg-beba-dark/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Av.%2041%20N%C2%B0%20285,%20Santa%20Teresita,%20Buenos%20Aires&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservas" class="py-20 bg-[#111] relative z-10 border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Reserva tu Fecha</h2>
+                    <p class="text-gray-400">Selecciona un día disponible. Los fines de semana están resaltados.</p>
+                    <div id="admin-indicator" class="hidden mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/20 text-red-400 border border-red-500/50 rounded-full text-sm font-semibold shadow-[0_0_10px_rgba(239,68,68,0.3)]">
+                        <i class="fas fa-lock-open"></i> MODO ADMINISTRADOR ACTIVO
+                    </div>
+                    <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <div class="bg-[#151515] rounded-2xl p-4 sm:p-6 border border-white/10 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="prev-month" class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-colors">
+                            <i class="fas fa-chevron-left text-xl"></i>
+                        </button>
+                        <h3 id="current-month-year" class="text-xl sm:text-2xl font-serif font-bold text-white capitalize tracking-wide">Mes Año</h3>
+                        <button id="next-month" class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-colors">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center mb-2">
+                        <div class="text-xs sm:text-sm font-medium text-orange-400">Dom</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500">Lun</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500">Mar</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500">Mié</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500">Jue</div>
+                        <div class="text-xs sm:text-sm font-medium text-orange-400">Vie</div>
+                        <div class="text-xs sm:text-sm font-medium text-orange-400">Sáb</div>
+                    </div>
+                    
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-1 sm:gap-2">
+                        <!-- Calendar days injected by JS -->
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-[#222] border border-white/20"></div>
+                            <span class="text-gray-400">Día de semana</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-orange-900/30 border border-orange-500/50"></div>
+                            <span class="text-gray-400">Fin de semana</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-red-500/10 border border-red-500/30 line-through decoration-red-500/50"></div>
+                            <span class="text-gray-400">Reservado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20 bg-beba-dark relative z-10 border-t border-white/5">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">¿Tienes Dudas?</h2>
+                    <p class="text-gray-400">Escríbenos y te responderemos a la brevedad.</p>
+                    <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
+                            <input type="text" id="name" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-400 mb-2">Número de Teléfono</label>
+                        <input type="tel" id="phone" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="Ej: 11 2345-6789">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Mensaje</label>
+                        <textarea id="message" rows="4" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none"></textarea>
+                    </div>
+                    <button type="submit" id="submit-contact" class="w-full gradient-bg text-black font-semibold py-4 rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)]">
+                        <i class="fab fa-whatsapp text-xl"></i> Enviar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-beba-dark py-12 border-t border-white/10 text-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <img src="https://i.ibb.co/dwBvCP3w/awdawdawd-02.png" alt="Logo Footer" class="h-16 w-auto object-contain opacity-50 mb-4 grayscale hover:grayscale-0 transition-all duration-300">
+            <p class="text-gray-500 mb-6">&copy; <span id="current-year"></span> Lo de Beba - Cantina de Sabores. Todos los derechos reservados.</p>
+            
+            <button id="open-admin-modal" class="text-sm text-gray-600 hover:text-orange-500 transition-colors flex items-center gap-2">
+                <i class="fas fa-shield-alt"></i> Acceso Administrador
+            </button>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm modal-close-trigger"></div>
+        <div class="relative bg-[#151515] border border-white/10 rounded-2xl w-full max-w-md p-6 shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="booking-modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-serif font-bold text-white">Confirmar Reserva</h3>
+                <button class="text-gray-400 hover:text-white modal-close-trigger">
+                    <i class="fas fa-times text-xl pointer-events-none"></i>
+                </button>
+            </div>
+            
+            <div class="bg-[#111] border border-white/5 rounded-xl p-4 mb-6 text-center">
+                <p class="text-sm text-gray-400 mb-1 uppercase tracking-wider">Fecha Seleccionada</p>
+                <p id="selected-date-display" class="text-orange-400 text-xl font-bold capitalize"></p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-4 rounded-lg border border-orange-500/20 mb-6">
+                <p class="text-sm text-gray-300 mb-2 text-center">
+                    <i class="fas fa-info-circle mr-2 text-orange-400"></i>Para asegurar la fecha, el valor de la seña es de:
+                </p>
+                <p class="text-3xl font-bold text-center text-white">$10.000 <span class="text-lg text-gray-400 font-normal">ARS</span></p>
+            </div>
+
+            <p class="text-sm text-gray-400 text-center mb-6">Al hacer clic en reservar, serás redirigido a WhatsApp para coordinar el pago directamente con nosotros.</p>
+
+            <div class="flex gap-3">
+                <button class="flex-1 py-3 px-4 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors modal-close-trigger">Cancelar</button>
+                <button id="whatsapp-booking" class="flex-1 py-3 px-4 rounded-lg bg-[#25D366] text-white font-semibold hover:bg-[#128C7E] transition-colors flex justify-center items-center gap-2 shadow-lg shadow-[#25D366]/20">
+                    <i class="fab fa-whatsapp text-xl"></i> Reservar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="admin-modal-backdrop"></div>
+        <div class="relative bg-[#151515] border border-orange-500/30 rounded-2xl w-full max-w-sm p-6 shadow-[0_0_30px_rgba(249,115,22,0.15)] transform scale-95 opacity-0 transition-all duration-300" id="admin-modal-content">
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-orange-500/20 text-orange-500 mx-auto flex items-center justify-center mb-4 border border-orange-500/50">
+                    <i class="fas fa-lock text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Panel de Control</h3>
+                <p class="text-sm text-gray-400 mt-1">Ingresa la contraseña para gestionar el calendario</p>
+            </div>
+            
+            <form id="admin-login-form" class="space-y-4">
+                <div>
+                    <input type="password" id="admin-password" placeholder="Contraseña" required class="w-full bg-[#111] border border-white/10 rounded-lg px-4 py-3 text-center text-white focus:outline-none focus:border-orange-500 tracking-widest font-mono">
+                    <p id="admin-error" class="text-red-400 text-xs text-center mt-2 hidden">Contraseña incorrecta</p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button type="button" id="close-admin-modal" class="flex-1 py-2.5 px-4 rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors text-sm">Cancelar</button>
+                    <button type="submit" class="flex-1 py-2.5 px-4 rounded-lg gradient-bg text-black font-semibold hover:opacity-90 transition-opacity text-sm">
+                        Ingresar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-[200] flex flex-col gap-3"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Setup environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'lo-de-beba-app-default';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "mock-api-key", projectId: "mock-project", appId: "mock-app-id"
+        };
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+        let bookedDates = {}; 
+        let isFirebaseInitialized = false;
+        let isAdminMode = false;
+
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            isFirebaseInitialized = true;
+        } catch (e) {
+            console.error("Firebase init error:", e);
+        }
+
+        // Utils
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        window.showToast = function(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const bgClass = type === 'success' ? 'bg-green-600/90' : 'bg-red-600/90';
+            const borderClass = type === 'success' ? 'border-green-400/50' : 'border-red-400/50';
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            
+            toast.className = `flex items-center gap-3 px-5 py-3 rounded-lg shadow-2xl text-white backdrop-blur-md ${bgClass} border ${borderClass} transform transition-all duration-300 translate-y-10 opacity-0 font-medium text-sm`;
+            toast.innerHTML = `<i class="fas ${icon} text-lg"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        };
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        let currentDate = new Date();
+        let selectedDateToBook = null;
+
+        const renderCalendar = () => {
+            const grid = document.getElementById('calendar-grid');
+            const monthYearDisplay = document.getElementById('current-month-year');
+            grid.innerHTML = '';
+
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            const monthName = currentDate.toLocaleString('es-ES', { month: 'long' });
+            monthYearDisplay.textContent = `${monthName} ${year}`;
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.className = 'p-1 sm:p-2';
+                grid.appendChild(emptyDiv);
+            }
+
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayDate = new Date(year, month, i);
+                
+                const yyyy = dayDate.getFullYear();
+                const mm = String(dayDate.getMonth() + 1).padStart(2, '0');
+                const dd = String(dayDate.getDate()).padStart(2, '0');
+                const dateString = `${yyyy}-${mm}-${dd}`;
+
+                const isPast = dayDate < today;
+                const isBooked = !!bookedDates[dateString];
+                
+                const dayOfWeek = dayDate.getDay();
+                // 0 = Sunday, 5 = Friday, 6 = Saturday
+                const isWeekend = dayOfWeek === 0 || dayOfWeek === 5 || dayOfWeek === 6;
+
+                const dayBtn = document.createElement('button');
+                dayBtn.textContent = i;
+                
+                let baseClasses = "w-full aspect-square max-w-[3rem] mx-auto rounded-xl flex items-center justify-center text-sm font-medium transition-all duration-200 border ";
+
+                if (isPast) {
+                    baseClasses += "text-gray-700 bg-[#0a0a0a] border-transparent cursor-not-allowed opacity-40";
+                    dayBtn.disabled = true;
+                } else if (isBooked) {
+                    if (isAdminMode) {
+                        baseClasses += "bg-red-500/20 text-red-400 border-red-500/50 cursor-pointer hover:bg-red-500/40 relative";
+                        dayBtn.title = "Reservado (Click para liberar)";
+                        dayBtn.onclick = () => toggleAdminBooking(dateString);
+                    } else {
+                        baseClasses += "bg-red-500/5 text-red-500/50 border-red-500/20 cursor-not-allowed line-through relative overflow-hidden";
+                        // Custom styling to make it clearly crossed out
+                        dayBtn.disabled = true;
+                        dayBtn.title = "Reservado";
+                    }
+                } else {
+                    // Available days
+                    if (isWeekend) {
+                        // Highlight weekends
+                        baseClasses += "bg-orange-950/20 text-orange-200 border-orange-500/30 hover:bg-orange-500 hover:text-white hover:border-orange-400 cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]";
+                    } else {
+                        // Weekdays
+                        baseClasses += "bg-[#222] text-gray-300 border-white/5 hover:bg-orange-500 hover:text-white hover:border-orange-500 cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]";
+                    }
+                    
+                    if (isAdminMode) {
+                        dayBtn.title = "Libre (Click para bloquear)";
+                        dayBtn.onclick = () => toggleAdminBooking(dateString);
+                    } else {
+                        dayBtn.onclick = () => openUserBookingModal(dateString);
+                    }
+                }
+
+                dayBtn.className = baseClasses;
+                
+                const wrapper = document.createElement('div');
+                wrapper.className = 'p-0.5 sm:p-1 flex justify-center';
+                wrapper.appendChild(dayBtn);
+                grid.appendChild(wrapper);
+            }
+        };
+
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        const bookingModal = document.getElementById('booking-modal');
+        const bookingModalContent = document.getElementById('booking-modal-content');
+
+        const openUserBookingModal = (dateStr) => {
+            selectedDateToBook = dateStr;
+            const [y, m, d] = dateStr.split('-');
+            const displayDate = new Date(y, m - 1, d).toLocaleDateString('es-ES', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+            document.getElementById('selected-date-display').textContent = displayDate;
+            
+            bookingModal.classList.remove('hidden');
+            setTimeout(() => {
+                bookingModalContent.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+        };
+
+        const closeUserBookingModal = () => {
+            bookingModalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                bookingModal.classList.add('hidden');
+                selectedDateToBook = null;
+            }, 300);
+        };
+
+        document.querySelectorAll('.modal-close-trigger').forEach(el => {
+            el.addEventListener('click', closeUserBookingModal);
+        });
+
+        // WhatsApp redirect
+        document.getElementById('whatsapp-booking').addEventListener('click', () => {
+            if (!selectedDateToBook) return;
+            
+            const [y, m, d] = selectedDateToBook.split('-');
+            const dateForMsg = `${d}/${m}/${y}`;
+            const phoneNumber = "5491131668729"; 
+            const message = `Hola, quiero reservar Lo de Beba para el día ${dateForMsg}. Quisiera coordinar el pago de los $10.000 de seña.`;
+            
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            closeUserBookingModal();
+        });
+
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const messageText = document.getElementById('message').value;
+
+            // Format the message for WhatsApp
+            const text = `¡Hola! Me contacto desde la web de Lo de Beba.%0A%0A*Mi nombre:* ${name}%0A*Mi email:* ${email}%0A*Mi teléfono:* ${phone}%0A%0A*Mensaje:*%0A${messageText}`;
+            
+            // Send to the same WhatsApp number used for bookings
+            const phoneNumber = "5491131668729";
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+
+            // Show toast and reset form
+            showToast("¡Redirigiendo a WhatsApp!");
+            e.target.reset();
+        });
+
+        const adminModal = document.getElementById('admin-modal');
+        const adminModalContent = document.getElementById('admin-modal-content');
+        
+        const openAdminModal = () => {
+            if (isAdminMode) {
+                // If already admin, clicking footer toggles it off
+                isAdminMode = false;
+                document.getElementById('admin-indicator').classList.add('hidden');
+                showToast("Modo Administrador desactivado");
+                renderCalendar();
+                return;
+            }
+            document.getElementById('admin-password').value = '';
+            document.getElementById('admin-error').classList.add('hidden');
+            adminModal.classList.remove('hidden');
+            setTimeout(() => {
+                adminModalContent.classList.remove('scale-95', 'opacity-0');
+                document.getElementById('admin-password').focus();
+            }, 10);
+        };
+
+        const closeAdminModal = () => {
+            adminModalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                adminModal.classList.add('hidden');
+            }, 300);
+        };
+
+        document.getElementById('open-admin-modal').addEventListener('click', openAdminModal);
+        document.getElementById('close-admin-modal').addEventListener('click', closeAdminModal);
+        document.getElementById('admin-modal-backdrop').addEventListener('click', closeAdminModal);
+
+        document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pass = document.getElementById('admin-password').value;
+            if (pass === 'BEBA2026') {
+                isAdminMode = true;
+                document.getElementById('admin-indicator').classList.remove('hidden');
+                closeAdminModal();
+                showToast("Modo Administrador Activo", "success");
+                renderCalendar();
+            } else {
+                const errorEl = document.getElementById('admin-error');
+                errorEl.classList.remove('hidden');
+                setTimeout(() => errorEl.classList.add('hidden'), 3000);
+            }
+        });
+
+        // Admin DB Toggle
+        window.toggleAdminBooking = async (dateStr) => {
+            if (!isFirebaseInitialized || !auth.currentUser) {
+                // Fallback for local testing without DB
+                if (bookedDates[dateStr]) delete bookedDates[dateStr];
+                else bookedDates[dateStr] = "local-id";
+                renderCalendar();
+                return;
+            }
+
+            try {
+                if (bookedDates[dateStr]) {
+                    // Delete reservation
+                    const docId = bookedDates[dateStr];
+                    await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'bookings', docId));
+                    showToast("Día liberado", "success");
+                } else {
+                    // Add reservation
+                    const bookingsRef = collection(db, 'artifacts', appId, 'public', 'data', 'bookings');
+                    await addDoc(bookingsRef, {
+                        date: dateStr,
+                        timestamp: new Date().getTime(),
+                        userId: auth.currentUser.uid,
+                        status: 'manual_block'
+                    });
+                    showToast("Día reservado", "success");
+                }
+            } catch (error) {
+                console.error("Admin toggle error:", error);
+                showToast("Error de conexión", "error");
+            }
+        };
+
+        const startApp = () => {
+            renderCalendar();
+            
+            if (isFirebaseInitialized) {
+                const bookingsRef = collection(db, 'artifacts', appId, 'public', 'data', 'bookings');
+                
+                onSnapshot(bookingsRef, (snapshot) => {
+                    bookedDates = {};
+                    snapshot.forEach((doc) => {
+                        const data = doc.data();
+                        if (data.date) bookedDates[data.date] = doc.id; 
+                    });
+                    renderCalendar(); 
+                }, (error) => {
+                    console.error("Firebase Snapshot error:", error);
+                });
+            }
+        };
+
+        if (isFirebaseInitialized) {
+            const authenticate = async () => {
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    startApp();
+                } catch (error) {
+                    console.error("Auth error:", error);
+                    startApp(); 
+                }
+            };
+            authenticate();
+        } else {
+            startApp();
+        }
+    </script>
+</body>
+</html>
