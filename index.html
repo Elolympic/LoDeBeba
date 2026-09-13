@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo de Beba - Salón para Eventos</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Lo de Beba - Salón para Eventos en Santa Teresita</title>
+    <meta name="description" content="Lo de Beba es tu salón de eventos ideal en Santa Teresita. Capacidad para 50 personas, cocina amplia, baños equipados y todas las comodidades para tu festejo.">
+    <meta name="keywords" content="salón de eventos, Santa Teresita, Lo de Beba, alquiler para fiestas, eventos, cumpleaños, reuniones, cantina">
+    <meta name="author" content="Lo de Beba">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Lo de Beba - Salón para Eventos">
+    <meta property="og:description" content="Tu espacio ideal para eventos en Santa Teresita. Capacidad para 50 personas, cocina amplia y más.">
+    <meta property="og:image" content="https://i.ibb.co/tpFdXQTs/621855766-18334932811212222-2294504106030855232-n.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/4ZcrKNxF/324406604-100909932883051-2563366318002402510-n.jpg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/4ZcrKNxF/324406604-100909932883051-2563366318002402510-n.jpg">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -46,9 +63,9 @@
             background: linear-gradient(to right, #fcd34d, #f97316, #ef4444);
         }
         /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #18181b; } /* zinc-900 */
-        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 4px; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #18181b; }
+        ::-webkit-scrollbar-thumb { background: #f97316; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
     </style>
 </head>
@@ -68,7 +85,7 @@
                     <a href="#contacto" class="text-zinc-300 hover:text-white transition-colors duration-200">Contacto</a>
                 </nav>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-zinc-300 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-zinc-300 hover:text-white focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -88,7 +105,6 @@
 
     <main class="flex-grow">
         <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-beba-dark flex items-center min-h-[85vh]">
-            <!-- Imagen de fondo con overlay oscuro para legibilidad -->
             <div class="absolute inset-0 z-0">
                 <img src="https://i.ibb.co/tpFdXQTs/621855766-18334932811212222-2294504106030855232-n.jpg" alt="Frente Local" class="w-full h-full object-cover object-center">
                 <div class="absolute inset-0 bg-zinc-950/85"></div>
@@ -165,42 +181,39 @@
                     <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Video 1 (Agrandable) -->
-                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview')">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-colors z-20 flex items-center justify-center">
-                             <div class="w-16 h-16 bg-orange-500/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-75 group-hover:scale-100 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
-                                 <i class="fas fa-expand text-white text-2xl"></i>
-                             </div>
+                <!-- Contenedor adaptado para mobile con proporciones limpias -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Video 1 -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 aspect-video relative group cursor-pointer w-full" onclick="openVideoModal('https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview')">
+                        <img src="https://i.ibb.co/HpH4332n/Whats-App-Image-2026-09-12-at-9-55-30-PM-1.jpg" alt="Video Salón 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
+                            <div class="bg-orange-500/90 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                                <i class="fas fa-play text-white text-lg md:text-2xl ml-1"></i>
+                            </div>
+                            <span class="gradient-bg text-zinc-950 px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest shadow-lg">Ver Video</span>
                         </div>
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                            <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
-                        </div>
-                        <iframe src="https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover pointer-events-none"></iframe>
                     </div>
                     
-                    <!-- Video 2 (Agrandable) -->
-                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview')">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-colors z-20 flex items-center justify-center">
-                             <div class="w-16 h-16 bg-orange-500/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-75 group-hover:scale-100 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
-                                 <i class="fas fa-expand text-white text-2xl"></i>
-                             </div>
+                    <!-- Video 2 -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 aspect-video relative group cursor-pointer w-full" onclick="openVideoModal('https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview')">
+                        <img src="https://i.ibb.co/Q73CJTz8/Whats-App-Image-2026-09-12-at-9-55-30-PM-2.jpg" alt="Video Salón 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
+                            <div class="bg-orange-500/90 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                                <i class="fas fa-play text-white text-lg md:text-2xl ml-1"></i>
+                            </div>
+                            <span class="gradient-bg text-zinc-950 px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest shadow-lg">Ver Video</span>
                         </div>
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                            <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
-                        </div>
-                        <iframe src="https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover pointer-events-none"></iframe>
                     </div>
 
-                    <!-- Portada de Galería (Abre el carrusel de fotos) -->
-                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openGallery()">
+                    <!-- Portada de Galería -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 aspect-video relative group cursor-pointer w-full sm:col-span-2 md:col-span-1" onclick="openGallery()">
                         <img src="https://i.ibb.co/ns1WHDX7/Whats-App-Image-2026-09-12-at-9-55-30-PM-7.jpg" alt="Ver Galería" class="w-full h-full object-cover opacity-60 group-hover:opacity-30 transition-opacity duration-500">
                         <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
-                            <div class="bg-black/50 p-4 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-images text-4xl text-white drop-shadow-lg"></i>
+                            <div class="bg-black/50 p-3 md:p-4 rounded-full mb-2 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-images text-2xl md:text-4xl text-white drop-shadow-lg"></i>
                             </div>
-                            <span class="gradient-bg text-zinc-950 px-6 py-2.5 rounded-full font-bold uppercase text-xs md:text-sm tracking-widest shadow-[0_0_20px_rgba(249,115,22,0.4)] text-center leading-tight">
-                                Ver Galería<br>(18 Fotos)
+                            <span class="gradient-bg text-zinc-950 px-5 py-2 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest shadow-[0_0_20px_rgba(249,115,22,0.4)] text-center leading-tight">
+                                Ver Galería (18 Fotos)
                             </span>
                         </div>
                     </div>
@@ -266,7 +279,7 @@
         <section id="contacto" class="py-20 bg-[#0c0c0f] relative z-10 border-t border-zinc-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Contacto y Ubicación</h2>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Contactanos y Ubicación</h2>
                     <p class="text-zinc-400">Dejanos tu consulta o vení a conocer el salón.</p>
                     <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
                 </div>
@@ -346,7 +359,7 @@
         </div>
     </div>
 
-    <!-- Modal Galería -->
+    <!-- Modal Galería con Carrusel y Miniaturas Inferiores -->
     <div id="gallery-modal" class="fixed inset-0 z-[110] hidden bg-black/95 flex flex-col backdrop-blur-md">
         <div class="flex justify-between items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent">
             <div class="text-lg md:text-xl font-bold bg-zinc-900/80 px-4 py-1.5 rounded-full border border-zinc-700 shadow-lg">
@@ -357,16 +370,22 @@
             </button>
         </div>
         
-        <div class="flex-1 relative flex items-center justify-center overflow-hidden p-2 md:p-8">
-            <button onclick="prevImage()" class="absolute left-2 md:left-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/50 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
+        <!-- Imagen Principal -->
+        <div class="flex-1 relative flex items-center justify-center overflow-hidden p-2 md:p-6 pb-2">
+            <button onclick="prevImage()" class="absolute left-2 md:left-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/60 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
                 <i class="fas fa-chevron-left"></i>
             </button>
             
             <img id="gallery-image" src="" alt="Galería" class="max-h-full max-w-full object-contain transition-opacity duration-300 rounded-lg shadow-2xl opacity-0">
             
-            <button onclick="nextImage()" class="absolute right-2 md:right-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/50 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
+            <button onclick="nextImage()" class="absolute right-2 md:right-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/60 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
                 <i class="fas fa-chevron-right"></i>
             </button>
+        </div>
+
+        <!-- Tira de Miniaturas Inferior (Navegación directa sin flechitas) -->
+        <div class="w-full bg-zinc-950/90 py-3 px-4 border-t border-zinc-800 overflow-x-auto flex items-center justify-center gap-2 max-h-24 z-10" id="gallery-thumbnails">
+            <!-- Rellenado dinámicamente por JS -->
         </div>
     </div>
 
@@ -487,13 +506,13 @@
                 const modal = document.getElementById('video-modal');
                 const iframe = document.getElementById('video-iframe');
                 if (modal && iframe) {
-                    iframe.src = ''; // Limpiamos el src para que el video y el sonido se detengan
+                    iframe.src = ''; 
                     modal.classList.add('hidden');
                     document.body.style.overflow = '';
                 }
             };
 
-            /* --- GALERÍA LOGIC --- */
+            /* --- GALERÍA LOGIC CON MINIATURAS INFERIORES --- */
             const galleryImages = [
                 "https://i.ibb.co/ns1WHDX7/Whats-App-Image-2026-09-12-at-9-55-30-PM-7.jpg",
                 "https://i.ibb.co/Y7NSSsZB/Whats-App-Image-2026-09-12-at-9-55-30-PM.jpg",
@@ -516,6 +535,21 @@
             ];
             
             let currentImageIndex = 0;
+
+            // Generar la barra de miniaturas inferior de forma automática
+            const thumbsContainer = document.getElementById('gallery-thumbnails');
+            if (thumbsContainer) {
+                thumbsContainer.innerHTML = '';
+                galleryImages.forEach((url, idx) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = url;
+                    thumb.alt = `Miniatura ${idx + 1}`;
+                    thumb.className = "h-14 w-20 object-cover rounded-md cursor-pointer opacity-50 hover:opacity-100 transition-all border-2 border-transparent flex-shrink-0";
+                    thumb.dataset.index = idx;
+                    thumb.onclick = () => window.showImage(idx);
+                    thumbsContainer.appendChild(thumb);
+                });
+            }
 
             window.openGallery = () => {
                 const modal = document.getElementById('gallery-modal');
@@ -545,6 +579,21 @@
                         counterEl.textContent = index + 1;
                         imgEl.style.opacity = '1';
                     }, 150);
+                }
+
+                // Actualizar estilo visual de las miniaturas en la barra inferior
+                if (thumbsContainer) {
+                    const thumbs = thumbsContainer.children;
+                    for (let t = 0; t < thumbs.length; t++) {
+                        if (t === index) {
+                            thumbs[t].classList.remove('opacity-50', 'border-transparent');
+                            thumbs[t].classList.add('opacity-100', 'border-orange-500', 'scale-105');
+                            thumbs[t].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            thumbs[t].classList.add('opacity-50', 'border-transparent');
+                            thumbs[t].classList.remove('opacity-100', 'border-orange-500', 'scale-105');
+                        }
+                    }
                 }
             };
 
@@ -577,7 +626,6 @@
             let selectedDateToBook = null;
             let isAdminMode = false;
             
-            // Cargar reservas desde localStorage
             let bookedDates = JSON.parse(localStorage.getItem('beba_reservas')) || {};
 
             const renderCalendar = () => {
@@ -596,7 +644,6 @@
                 const monthName = currentDate.toLocaleString('es-ES', { month: 'long' });
                 monthYearDisplay.textContent = `${monthName} ${year}`;
 
-                // Espacios vacíos previos
                 for (let i = 0; i < firstDay; i++) {
                     const emptyDiv = document.createElement('div');
                     emptyDiv.className = 'p-1';
@@ -750,7 +797,6 @@
             
             window.openAdminModal = () => {
                 if (isAdminMode) {
-                    // Desactivar admin si ya está activo
                     isAdminMode = false;
                     const indicator = document.getElementById('admin-indicator');
                     if(indicator) indicator.classList.add('hidden');
@@ -826,7 +872,6 @@
                 renderCalendar();
             };
 
-            // Iniciar App
             renderCalendar();
         });
     </script>
