@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo de Beba - Eventos</title>
+    <title>Lo de Beba - Salón para Eventos</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -35,7 +35,6 @@
         body {
             background-color: #09090b; /* zinc-950 */
             color: #f4f4f5; /* zinc-100 */
-            scroll-behavior: smooth;
         }
         .gradient-text {
             background: linear-gradient(to right, #fcd34d, #f97316, #ef4444);
@@ -64,8 +63,9 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#inicio" class="text-zinc-300 hover:text-white transition-colors duration-200">Inicio</a>
                     <a href="#servicios" class="text-zinc-300 hover:text-white transition-colors duration-200">Comodidades</a>
-                    <a href="#espacio" class="text-zinc-300 hover:text-white transition-colors duration-200">Salón y Ubicación</a>
+                    <a href="#espacio" class="text-zinc-300 hover:text-white transition-colors duration-200">El Salón</a>
                     <a href="#reservas" class="text-zinc-300 hover:text-white transition-colors duration-200">Reservas</a>
+                    <a href="#contacto" class="text-zinc-300 hover:text-white transition-colors duration-200">Contacto</a>
                 </nav>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-zinc-300 hover:text-white focus:outline-none">
@@ -75,12 +75,13 @@
             </div>
         </div>
         <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-beba-dark border-b border-zinc-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div id="mobile-menu" class="hidden md:hidden bg-beba-dark border-b border-zinc-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-2xl">
                 <a href="#inicio" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">Inicio</a>
                 <a href="#servicios" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">Comodidades</a>
-                <a href="#espacio" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">Salón y Ubicación</a>
+                <a href="#espacio" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">El Salón</a>
                 <a href="#reservas" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">Reservas</a>
+                <a href="#contacto" class="block px-3 py-2 text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-md">Contacto</a>
             </div>
         </div>
     </header>
@@ -94,11 +95,11 @@
             </div>
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-                <img src="https://i.ibb.co/4ZcrKNxF/324406604-100909932883051-2563366318002402510-n.jpg" alt="Lo de Beba - Cantina de Sabores" class="w-32 md:w-48 rounded-full mb-8 drop-shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:scale-105 transition-transform duration-500">
+                <img src="https://i.ibb.co/4ZcrKNxF/324406604-100909932883051-2563366318002402510-n.jpg" alt="Lo de Beba - Logo" class="w-32 md:w-48 rounded-full mb-8 drop-shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:scale-105 transition-transform duration-500 border-4 border-zinc-800">
                 
                 <div class="mt-2 mb-10 flex flex-col items-center">
                     <span class="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide mb-4">Tu espacio ideal</span>
-                    <span class="text-4xl md:text-6xl font-black gradient-text tracking-widest uppercase drop-shadow-md">Para eventos</span>
+                    <span class="text-4xl md:text-6xl font-black gradient-text tracking-widest uppercase drop-shadow-md">para Eventos</span>
                 </div>
 
                 <div class="flex justify-center">
@@ -109,7 +110,7 @@
             </div>
         </section>
 
-        <section id="servicios" class="py-24 bg-zinc-950 relative z-10">
+        <section id="servicios" class="py-24 bg-zinc-950 relative z-10 border-b border-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Comodidades Exclusivas</h2>
@@ -159,48 +160,48 @@
         <section id="espacio" class="py-20 bg-[#0c0c0f] relative z-10 border-t border-zinc-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">El Salón y Ubicación</h2>
-                    <p class="text-zinc-400 text-lg">Conocé nuestras instalaciones y dónde encontrarnos</p>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">El Salón</h2>
+                    <p class="text-zinc-400 text-lg">Conocé nuestras instalaciones para tu evento</p>
                     <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                    <!-- Columna de Videos (Apilados) -->
-                    <div class="flex flex-col gap-6 justify-between h-full">
-                        <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full">
-                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                                <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
-                            </div>
-                            <iframe src="https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover"></iframe>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Video 1 (Agrandable) -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview')">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-colors z-20 flex items-center justify-center">
+                             <div class="w-16 h-16 bg-orange-500/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-75 group-hover:scale-100 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                                 <i class="fas fa-expand text-white text-2xl"></i>
+                             </div>
                         </div>
-                        <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full">
-                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                                <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
-                            </div>
-                            <iframe src="https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover"></iframe>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                            <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
                         </div>
+                        <iframe src="https://drive.google.com/file/d/1-r9fnGoKMP1HoMSvqXfc6KZ9E0lV58YK/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover pointer-events-none"></iframe>
+                    </div>
+                    
+                    <!-- Video 2 (Agrandable) -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview')">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-colors z-20 flex items-center justify-center">
+                             <div class="w-16 h-16 bg-orange-500/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-75 group-hover:scale-100 shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                                 <i class="fas fa-expand text-white text-2xl"></i>
+                             </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                            <i class="fas fa-spinner fa-spin text-orange-500 text-3xl"></i>
+                        </div>
+                        <iframe src="https://drive.google.com/file/d/1IY-ojSt8ko6YU4gXk2lJOqvg0DEK2Nsp/preview" width="100%" height="100%" allow="autoplay" class="relative z-10 w-full h-full border-0 object-cover pointer-events-none"></iframe>
                     </div>
 
-                    <!-- Columna de Mapa (Más grande) -->
-                    <div class="flex flex-col h-full">
-                        <div class="bg-zinc-900/40 border border-zinc-800 rounded-2xl p-5 flex flex-col h-full shadow-2xl">
-                            <p class="text-zinc-300 text-sm mb-4 flex items-start gap-3">
-                                <i class="fas fa-map-marker-alt text-orange-500 text-lg mt-0.5"></i>
-                                <span>Av. 41 N° 285, B7107 Santa Teresita,<br>Provincia de Buenos Aires</span>
-                            </p>
-                            <div class="w-full flex-grow min-h-[400px] lg:min-h-0 rounded-xl overflow-hidden relative group border border-zinc-800/50">
-                                <div class="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
-                                <iframe 
-                                    src="https://maps.google.com/maps?q=Av.%2041%20N%C2%B0%20285,%20Santa%20Teresita,%20Buenos%20Aires&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 h-full w-full object-cover"
-                                ></iframe>
+                    <!-- Portada de Galería (Abre el carrusel de fotos) -->
+                    <div class="rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 aspect-video relative group w-full cursor-pointer" onclick="openGallery()">
+                        <img src="https://i.ibb.co/ns1WHDX7/Whats-App-Image-2026-09-12-at-9-55-30-PM-7.jpg" alt="Ver Galería" class="w-full h-full object-cover opacity-60 group-hover:opacity-30 transition-opacity duration-500">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-20">
+                            <div class="bg-black/50 p-4 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-images text-4xl text-white drop-shadow-lg"></i>
                             </div>
+                            <span class="gradient-bg text-zinc-950 px-6 py-2.5 rounded-full font-bold uppercase text-xs md:text-sm tracking-widest shadow-[0_0_20px_rgba(249,115,22,0.4)] text-center leading-tight">
+                                Ver Galería<br>(18 Fotos)
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -211,17 +212,31 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Reserva tu Fecha</h2>
-                    <p class="text-zinc-400">Seleccioná un día disponible. Fines de semana resaltados en color cálido.</p>
+                    <p class="text-zinc-400">Seleccioná un día en el calendario para solicitar disponibilidad.</p>
                     
                     <div id="admin-indicator" class="hidden mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 text-red-400 border border-red-500/30 rounded-full text-sm font-semibold">
                         <i class="fas fa-shield-alt"></i> MODO ADMIN (Clic para bloquear/liberar)
                     </div>
                     
-                    <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
+                    <!-- LEYENDA TIPO PÍLDORA -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm bg-zinc-900 inline-flex px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-zinc-800 shadow-xl mx-auto">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3.5 h-3.5 rounded-full bg-zinc-500"></div>
+                            <span class="text-zinc-300 font-medium">Disponible</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3.5 h-3.5 rounded-full border-2 border-orange-400"></div>
+                            <span class="text-orange-400 font-medium">Fin de semana</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3.5 h-3.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
+                            <span class="text-white font-medium">Reservado</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-zinc-900 rounded-2xl p-4 sm:p-6 border border-zinc-800 shadow-2xl">
-                    <div class="flex justify-between items-center mb-6">
+                <div class="bg-zinc-900/80 rounded-2xl p-4 sm:p-6 md:p-8 border border-zinc-800 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6 border-b border-zinc-800 pb-4">
                         <button id="prev-month" class="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-full transition-colors">
                             <i class="fas fa-chevron-left text-xl"></i>
                         </button>
@@ -231,69 +246,73 @@
                         </button>
                     </div>
                     
-                    <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center mb-2">
-                        <div class="text-xs sm:text-sm font-medium text-orange-400">Dom</div>
-                        <div class="text-xs sm:text-sm font-medium text-zinc-500">Lun</div>
-                        <div class="text-xs sm:text-sm font-medium text-zinc-500">Mar</div>
-                        <div class="text-xs sm:text-sm font-medium text-zinc-500">Mié</div>
-                        <div class="text-xs sm:text-sm font-medium text-zinc-500">Jue</div>
-                        <div class="text-xs sm:text-sm font-medium text-orange-400">Vie</div>
-                        <div class="text-xs sm:text-sm font-medium text-orange-400">Sáb</div>
+                    <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center mb-4">
+                        <div class="text-xs sm:text-sm font-bold text-orange-400 uppercase tracking-wider">Dom</div>
+                        <div class="text-xs sm:text-sm font-bold text-zinc-500 uppercase tracking-wider">Lun</div>
+                        <div class="text-xs sm:text-sm font-bold text-zinc-500 uppercase tracking-wider">Mar</div>
+                        <div class="text-xs sm:text-sm font-bold text-zinc-500 uppercase tracking-wider">Mié</div>
+                        <div class="text-xs sm:text-sm font-bold text-zinc-500 uppercase tracking-wider">Jue</div>
+                        <div class="text-xs sm:text-sm font-bold text-orange-400 uppercase tracking-wider">Vie</div>
+                        <div class="text-xs sm:text-sm font-bold text-orange-400 uppercase tracking-wider">Sáb</div>
                     </div>
                     
-                    <div id="calendar-grid" class="grid grid-cols-7 gap-1 sm:gap-2">
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-2 sm:gap-3">
                         <!-- Generado por JS -->
-                    </div>
-
-                    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm">
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 rounded bg-zinc-800 border border-zinc-700"></div>
-                            <span class="text-zinc-400">Día de semana</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 rounded bg-orange-950 border border-orange-500/30"></div>
-                            <span class="text-zinc-400">Fin de semana</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 rounded bg-red-950/50 border border-red-500/30 line-through decoration-red-500/50"></div>
-                            <span class="text-zinc-400">Reservado</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contacto" class="py-20 bg-[#0c0c0f] relative z-10 border-t border-zinc-800/50">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Contactanos</h2>
-                    <p class="text-zinc-400">Escribinos y te responderemos a la brevedad.</p>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Contactanos y Ubicación</h2>
+                    <p class="text-zinc-400">Dejanos tu consulta o vení a conocer el salón.</p>
                     <div class="w-24 h-1 gradient-bg mx-auto rounded-full mt-4"></div>
                 </div>
-
-                <form id="contact-form" class="space-y-5 bg-zinc-900/50 p-6 sm:p-8 rounded-2xl border border-zinc-800">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-sm font-medium text-zinc-400 mb-2">Nombre Completo</label>
-                            <input type="text" id="name" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+                    <!-- Formulario -->
+                    <div class="bg-zinc-900/50 p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-xl flex flex-col justify-center">
+                        <form id="contact-form" class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-400 mb-2">Nombre Completo</label>
+                                    <input type="text" id="name" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-zinc-400 mb-2">Correo Electrónico</label>
+                                    <input type="email" id="email" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-zinc-400 mb-2">Número de Teléfono</label>
+                                <input type="tel" id="phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="Ej: 11 2345-6789">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-zinc-400 mb-2">Mensaje o consulta</label>
+                                <textarea id="message" rows="4" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full gradient-bg text-zinc-950 font-bold py-4 rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-2 shadow-lg text-lg">
+                                <i class="fab fa-whatsapp text-xl"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Mapa -->
+                    <div class="h-full min-h-[400px] w-full rounded-2xl overflow-hidden border border-zinc-800 shadow-xl grayscale hover:grayscale-0 transition duration-500 relative flex flex-col group">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Av.%2041%20N%C2%B0%20285,%20Santa%20Teresita,%20Buenos%20Aires&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            class="absolute top-0 left-0 w-full h-full border-0 flex-grow"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="absolute bottom-0 left-0 w-full bg-zinc-950/95 p-5 border-t border-zinc-800 text-center backdrop-blur-md pointer-events-none">
+                            <p class="text-white font-medium text-lg"><i class="fas fa-map-marker-alt text-orange-500 mr-3"></i>Av. 41 N° 285, Santa Teresita, Prov. de Buenos Aires</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-zinc-400 mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors">
-                        </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-400 mb-2">Número de Teléfono</label>
-                        <input type="tel" id="phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" placeholder="Ej: 11 2345-6789">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-zinc-400 mb-2">Mensaje</label>
-                        <textarea id="message" rows="4" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none"></textarea>
-                    </div>
-                    <button type="submit" class="w-full gradient-bg text-zinc-950 font-bold py-4 rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-2 shadow-lg">
-                        <i class="fab fa-whatsapp text-xl"></i> Enviar Consulta
-                    </button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -308,6 +327,48 @@
             </button>
         </div>
     </footer>
+
+    <!-- Modal Video a Pantalla Completa -->
+    <div id="video-modal" class="fixed inset-0 z-[115] hidden bg-black/95 flex flex-col backdrop-blur-md">
+        <div class="flex justify-end items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent absolute top-0 w-full">
+            <button onclick="closeVideoModal()" class="text-3xl md:text-4xl hover:text-orange-500 transition drop-shadow-md focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="flex-1 w-full h-full flex items-center justify-center p-4 md:p-12 pt-20">
+            <div class="w-full max-w-5xl aspect-video bg-zinc-950 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative border border-zinc-800">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <i class="fas fa-spinner fa-spin text-orange-500 text-4xl"></i>
+                </div>
+                <iframe id="video-iframe" src="" width="100%" height="100%" allow="autoplay; fullscreen" class="relative z-10 w-full h-full border-0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Galería -->
+    <div id="gallery-modal" class="fixed inset-0 z-[110] hidden bg-black/95 flex flex-col backdrop-blur-md">
+        <div class="flex justify-between items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent">
+            <div class="text-lg md:text-xl font-bold bg-zinc-900/80 px-4 py-1.5 rounded-full border border-zinc-700 shadow-lg">
+                <span id="gallery-counter" class="text-orange-500">1</span> / 18
+            </div>
+            <button onclick="closeGallery()" class="text-3xl md:text-4xl hover:text-orange-500 transition drop-shadow-md focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="flex-1 relative flex items-center justify-center overflow-hidden p-2 md:p-8">
+            <button onclick="prevImage()" class="absolute left-2 md:left-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/50 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <img id="gallery-image" src="" alt="Galería" class="max-h-full max-w-full object-contain transition-opacity duration-300 rounded-lg shadow-2xl opacity-0">
+            
+            <button onclick="nextImage()" class="absolute right-2 md:right-6 text-white text-2xl md:text-4xl hover:text-orange-500 transition z-10 bg-black/50 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full drop-shadow-lg focus:outline-none">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Modal Reserva WhatsApp -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
@@ -354,7 +415,7 @@
             
             <form id="admin-login-form" class="space-y-4">
                 <div>
-                    <input type="password" id="admin-password" placeholder="Contraseña" required class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-center text-white focus:outline-none focus:border-orange-500 tracking-widest font-mono">
+                    <input type="password" id="admin-password" placeholder="Contraseña" class="w-full bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-center text-white focus:outline-none focus:border-orange-500 tracking-widest font-mono">
                     <p id="admin-error" class="text-red-400 text-xs text-center mt-2 hidden">Contraseña incorrecta</p>
                 </div>
                 <div class="flex gap-3 pt-2">
@@ -371,259 +432,403 @@
     <div id="toast-container" class="fixed bottom-5 right-5 z-[200] flex flex-col gap-3"></div>
 
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
 
-        // Utilidad de Toasts (Notificaciones)
-        const showToast = (message, type = 'success') => {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            const bgClass = type === 'success' ? 'bg-zinc-900 border-green-500/50 text-green-400' : 'bg-zinc-900 border-red-500/50 text-red-400';
-            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
-            
-            toast.className = `flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl border ${bgClass} transform transition-all duration-300 translate-y-10 opacity-0 font-medium text-sm`;
-            toast.innerHTML = `<i class="fas ${icon} text-lg"></i> <span>${message}</span>`;
-            
-            container.appendChild(toast);
-            
-            setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
-            setTimeout(() => {
-                toast.classList.add('translate-y-10', 'opacity-0');
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-        };
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Menú Móvil
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+            // Utilidad de Toasts (Notificaciones)
+            const showToast = (message, type = 'success') => {
+                const container = document.getElementById('toast-container');
+                if (!container) return;
+                const toast = document.createElement('div');
+                const bgClass = type === 'success' ? 'bg-zinc-900 border-green-500/50 text-green-400' : 'bg-zinc-900 border-red-500/50 text-red-400';
+                const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+                
+                toast.className = `flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl border ${bgClass} transform transition-all duration-300 translate-y-10 opacity-0 font-medium text-sm`;
+                toast.innerHTML = `<i class="fas ${icon} text-lg"></i> <span>${message}</span>`;
+                
+                container.appendChild(toast);
+                
+                setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
+                setTimeout(() => {
+                    toast.classList.add('translate-y-10', 'opacity-0');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            };
 
-        // Ocultar menú al hacer click en link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
-
-        let currentDate = new Date();
-        let selectedDateToBook = null;
-        let isAdminMode = false;
-        
-        // Cargar reservas desde localStorage para la demostración
-        let bookedDates = JSON.parse(localStorage.getItem('beba_reservas')) || {};
-
-        const renderCalendar = () => {
-            const grid = document.getElementById('calendar-grid');
-            const monthYearDisplay = document.getElementById('current-month-year');
-            grid.innerHTML = '';
-
-            const year = currentDate.getFullYear();
-            const month = currentDate.getMonth();
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            const monthName = currentDate.toLocaleString('es-ES', { month: 'long' });
-            monthYearDisplay.textContent = `${monthName} ${year}`;
-
-            // Espacios vacíos previos
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDiv = document.createElement('div');
-                emptyDiv.className = 'p-1';
-                grid.appendChild(emptyDiv);
+            // Menú Móvil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) menu.classList.toggle('hidden');
+                });
             }
 
-            const today = new Date();
-            today.setHours(0,0,0,0);
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu) menu.classList.add('hidden');
+                });
+            });
 
-            for (let i = 1; i <= daysInMonth; i++) {
-                const dayDate = new Date(year, month, i);
-                const yyyy = dayDate.getFullYear();
-                const mm = String(dayDate.getMonth() + 1).padStart(2, '0');
-                const dd = String(dayDate.getDate()).padStart(2, '0');
-                const dateString = `${yyyy}-${mm}-${dd}`;
+            /* --- VIDEO MODAL LOGIC --- */
+            window.openVideoModal = (url) => {
+                const modal = document.getElementById('video-modal');
+                const iframe = document.getElementById('video-iframe');
+                if (modal && iframe) {
+                    iframe.src = url;
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
 
-                const isPast = dayDate < today;
-                const isBooked = !!bookedDates[dateString];
+            window.closeVideoModal = () => {
+                const modal = document.getElementById('video-modal');
+                const iframe = document.getElementById('video-iframe');
+                if (modal && iframe) {
+                    iframe.src = ''; // Limpiamos el src para que el video y el sonido se detengan
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            /* --- GALERÍA LOGIC --- */
+            const galleryImages = [
+                "https://i.ibb.co/ns1WHDX7/Whats-App-Image-2026-09-12-at-9-55-30-PM-7.jpg",
+                "https://i.ibb.co/Y7NSSsZB/Whats-App-Image-2026-09-12-at-9-55-30-PM.jpg",
+                "https://i.ibb.co/bjCd4JBW/Whats-App-Image-2026-09-12-at-9-55-30-PM-8.jpg",
+                "https://i.ibb.co/7tWjgwfZ/Whats-App-Image-2026-09-12-at-9-55-30-PM-9.jpg",
+                "https://i.ibb.co/My2MBL6m/Whats-App-Image-2026-09-12-at-9-55-30-PM-10.jpg",
+                "https://i.ibb.co/WpVg38Sx/Whats-App-Image-2026-09-12-at-9-55-30-PM-11.jpg",
+                "https://i.ibb.co/dwgnxMwb/Whats-App-Image-2026-09-12-at-9-55-30-PM-12.jpg",
+                "https://i.ibb.co/Y7L3fqCm/Whats-App-Image-2026-09-12-at-9-55-30-PM-13.jpg",
+                "https://i.ibb.co/wNCLgT9j/Whats-App-Image-2026-09-12-at-9-55-30-PM-14.jpg",
+                "https://i.ibb.co/bMrzvvxP/Whats-App-Image-2026-09-12-at-9-55-30-PM-15.jpg",
+                "https://i.ibb.co/tTcGfK9S/Whats-App-Image-2026-09-12-at-9-55-30-PM-16.jpg",
+                "https://i.ibb.co/Ndf8kfcg/Whats-App-Image-2026-09-12-at-9-55-30-PM-17.jpg",
+                "https://i.ibb.co/HpH4332n/Whats-App-Image-2026-09-12-at-9-55-30-PM-1.jpg",
+                "https://i.ibb.co/Q73CJTz8/Whats-App-Image-2026-09-12-at-9-55-30-PM-2.jpg",
+                "https://i.ibb.co/GfcH6FGV/Whats-App-Image-2026-09-12-at-9-55-30-PM-3.jpg",
+                "https://i.ibb.co/q3q3s1Vg/Whats-App-Image-2026-09-12-at-9-55-30-PM-4.jpg",
+                "https://i.ibb.co/tPqv7QPZ/Whats-App-Image-2026-09-12-at-9-55-30-PM-5.jpg",
+                "https://i.ibb.co/Jw7DFKPL/Whats-App-Image-2026-09-12-at-9-55-30-PM-6.jpg"
+            ];
+            
+            let currentImageIndex = 0;
+
+            window.openGallery = () => {
+                const modal = document.getElementById('gallery-modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    window.showImage(0);
+                }
+            };
+
+            window.closeGallery = () => {
+                const modal = document.getElementById('gallery-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            window.showImage = (index) => {
+                currentImageIndex = index;
+                const imgEl = document.getElementById('gallery-image');
+                const counterEl = document.getElementById('gallery-counter');
+                if (imgEl && counterEl) {
+                    imgEl.style.opacity = '0';
+                    setTimeout(() => {
+                        imgEl.src = galleryImages[index];
+                        counterEl.textContent = index + 1;
+                        imgEl.style.opacity = '1';
+                    }, 150);
+                }
+            };
+
+            window.nextImage = () => {
+                window.showImage((currentImageIndex + 1) % galleryImages.length);
+            };
+
+            window.prevImage = () => {
+                window.showImage((currentImageIndex - 1 + galleryImages.length) % galleryImages.length);
+            };
+
+            // Teclado para Galería y Videos
+            document.addEventListener('keydown', (e) => {
+                const gallery = document.getElementById('gallery-modal');
+                const video = document.getElementById('video-modal');
                 
-                // 0 = Domingo, 5 = Viernes, 6 = Sábado
-                const dayOfWeek = dayDate.getDay();
-                const isWeekend = dayOfWeek === 0 || dayOfWeek === 5 || dayOfWeek === 6;
-
-                const dayBtn = document.createElement('button');
-                dayBtn.textContent = i;
-                
-                let baseClasses = "w-full aspect-square max-w-[3rem] mx-auto rounded-xl flex items-center justify-center text-sm font-medium transition-all duration-200 border focus:outline-none ";
-
-                if (isPast && !isAdminMode) {
-                    baseClasses += "text-zinc-700 bg-zinc-950 border-transparent cursor-not-allowed opacity-50";
-                    dayBtn.disabled = true;
-                } else if (isBooked) {
-                    if (isAdminMode) {
-                        baseClasses += "bg-red-500/20 text-red-400 border-red-500/50 cursor-pointer hover:bg-red-500/40 relative";
-                        dayBtn.title = "Reservado (Click para liberar)";
-                        dayBtn.onclick = () => toggleAdminBooking(dateString);
-                    } else {
-                        baseClasses += "bg-red-950/30 text-zinc-600 border-red-500/20 cursor-not-allowed line-through relative overflow-hidden";
-                        dayBtn.disabled = true;
-                    }
-                } else {
-                    // Días disponibles
-                    if (isWeekend) {
-                        // Resaltado sutil en tonos naranjas para Viernes, Sábados y Domingos
-                        baseClasses += "bg-orange-950/40 text-orange-200 border-orange-500/30 hover:bg-orange-600 hover:text-white hover:border-orange-500 cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]";
-                    } else {
-                        // Lunes a Jueves
-                        baseClasses += "bg-zinc-800 text-zinc-300 border-zinc-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]";
-                    }
-                    
-                    if (isAdminMode) {
-                        dayBtn.title = "Libre (Click para bloquear)";
-                        dayBtn.onclick = () => toggleAdminBooking(dateString);
-                    } else {
-                        dayBtn.onclick = () => openUserBookingModal(dateString);
-                    }
+                if (gallery && !gallery.classList.contains('hidden')) {
+                    if (e.key === 'ArrowRight') window.nextImage();
+                    if (e.key === 'ArrowLeft') window.prevImage();
+                    if (e.key === 'Escape') window.closeGallery();
                 }
 
-                dayBtn.className = baseClasses;
-                
-                const wrapper = document.createElement('div');
-                wrapper.className = 'p-0.5 sm:p-1 flex justify-center';
-                wrapper.appendChild(dayBtn);
-                grid.appendChild(wrapper);
-            }
-        };
-
-        document.getElementById('prev-month').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-
-        document.getElementById('next-month').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-
-        const bookingModal = document.getElementById('booking-modal');
-        const bookingModalContent = document.getElementById('booking-modal-content');
-
-        const openUserBookingModal = (dateStr) => {
-            selectedDateToBook = dateStr;
-            const [y, m, d] = dateStr.split('-');
-            const displayDate = new Date(y, m - 1, d).toLocaleDateString('es-ES', {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                if (video && !video.classList.contains('hidden') && e.key === 'Escape') {
+                    window.closeVideoModal();
+                }
             });
-            document.getElementById('selected-date-display').textContent = displayDate;
+
+            /* --- CALENDAR LOGIC --- */
+            let currentDate = new Date();
+            let selectedDateToBook = null;
+            let isAdminMode = false;
             
-            bookingModal.classList.remove('hidden');
-            setTimeout(() => {
-                bookingModalContent.classList.remove('scale-95', 'opacity-0');
-            }, 10);
-        };
+            // Cargar reservas desde localStorage
+            let bookedDates = JSON.parse(localStorage.getItem('beba_reservas')) || {};
 
-        const closeUserBookingModal = () => {
-            bookingModalContent.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                bookingModal.classList.add('hidden');
-                selectedDateToBook = null;
-            }, 300);
-        };
+            const renderCalendar = () => {
+                const grid = document.getElementById('calendar-grid');
+                const monthYearDisplay = document.getElementById('current-month-year');
+                
+                if (!grid || !monthYearDisplay) return;
+                
+                grid.innerHTML = '';
 
-        document.querySelectorAll('.modal-close-trigger').forEach(el => {
-            el.addEventListener('click', closeUserBookingModal);
-        });
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth();
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // WhatsApp redirect para Reservas
-        document.getElementById('whatsapp-booking').addEventListener('click', () => {
-            if (!selectedDateToBook) return;
+                const monthName = currentDate.toLocaleString('es-ES', { month: 'long' });
+                monthYearDisplay.textContent = `${monthName} ${year}`;
+
+                // Espacios vacíos previos
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyDiv = document.createElement('div');
+                    emptyDiv.className = 'p-1';
+                    grid.appendChild(emptyDiv);
+                }
+
+                const today = new Date();
+                today.setHours(0,0,0,0);
+
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const dayDate = new Date(year, month, i);
+                    const yyyy = dayDate.getFullYear();
+                    const mm = String(dayDate.getMonth() + 1).padStart(2, '0');
+                    const dd = String(dayDate.getDate()).padStart(2, '0');
+                    const dateString = `${yyyy}-${mm}-${dd}`;
+
+                    const isPast = dayDate < today;
+                    const isBooked = !!bookedDates[dateString];
+                    
+                    const dayOfWeek = dayDate.getDay();
+                    const isWeekend = dayOfWeek === 0 || dayOfWeek === 5 || dayOfWeek === 6;
+
+                    const dayBtn = document.createElement('button');
+                    dayBtn.textContent = i;
+                    
+                    let baseClasses = "w-full aspect-square max-w-[3.5rem] mx-auto rounded-xl flex items-center justify-center text-sm md:text-base font-bold transition-all duration-200 border focus:outline-none ";
+
+                    if (isPast && !isAdminMode) {
+                        baseClasses += "text-zinc-700 bg-zinc-950 border-transparent cursor-not-allowed opacity-50";
+                        dayBtn.disabled = true;
+                    } else if (isBooked) {
+                        if (isAdminMode) {
+                            baseClasses += "bg-red-500/20 text-red-400 border-red-500/50 cursor-pointer hover:bg-red-500/40 relative";
+                            dayBtn.title = "Reservado (Click para liberar)";
+                            dayBtn.onclick = () => window.toggleAdminBooking(dateString);
+                        } else {
+                            baseClasses += "bg-red-500 text-white shadow-[0_0_10px_rgba(239,68,68,0.5)] border-transparent cursor-not-allowed relative overflow-hidden";
+                            dayBtn.disabled = true;
+                        }
+                    } else {
+                        if (isWeekend) {
+                            baseClasses += "bg-zinc-800 text-orange-400 border-orange-500/40 hover:bg-orange-500 hover:text-white cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]";
+                        } else {
+                            baseClasses += "bg-zinc-800 text-zinc-300 border-zinc-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 cursor-pointer hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]";
+                        }
+                        
+                        if (isAdminMode) {
+                            dayBtn.title = "Libre (Click para bloquear)";
+                            dayBtn.onclick = () => window.toggleAdminBooking(dateString);
+                        } else {
+                            dayBtn.onclick = () => window.openUserBookingModal(dateString);
+                        }
+                    }
+
+                    dayBtn.className = baseClasses;
+                    
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'p-1 flex justify-center';
+                    wrapper.appendChild(dayBtn);
+                    grid.appendChild(wrapper);
+                }
+            };
+
+            const prevMonthBtn = document.getElementById('prev-month');
+            if(prevMonthBtn) {
+                prevMonthBtn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() - 1);
+                    renderCalendar();
+                });
+            }
+
+            const nextMonthBtn = document.getElementById('next-month');
+            if(nextMonthBtn) {
+                nextMonthBtn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() + 1);
+                    renderCalendar();
+                });
+            }
+
+            const bookingModal = document.getElementById('booking-modal');
+            const bookingModalContent = document.getElementById('booking-modal-content');
+
+            window.openUserBookingModal = (dateStr) => {
+                selectedDateToBook = dateStr;
+                const [y, m, d] = dateStr.split('-');
+                const displayDate = new Date(y, m - 1, d).toLocaleDateString('es-ES', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                });
+                
+                const displayEl = document.getElementById('selected-date-display');
+                if(displayEl) displayEl.textContent = displayDate;
+                
+                if (bookingModal) {
+                    bookingModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        if (bookingModalContent) bookingModalContent.classList.remove('scale-95', 'opacity-0');
+                    }, 10);
+                }
+            };
+
+            window.closeUserBookingModal = () => {
+                if (bookingModalContent) {
+                    bookingModalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        if (bookingModal) bookingModal.classList.add('hidden');
+                        selectedDateToBook = null;
+                    }, 300);
+                }
+            };
+
+            document.querySelectorAll('.modal-close-trigger').forEach(el => {
+                el.addEventListener('click', window.closeUserBookingModal);
+            });
+
+            const whatsappBtn = document.getElementById('whatsapp-booking');
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', () => {
+                    if (!selectedDateToBook) return;
+                    
+                    const [y, m, d] = selectedDateToBook.split('-');
+                    const dateForMsg = `${d}/${m}/${y}`;
+                    const phoneNumber = "5491131668729"; 
+                    const message = `Hola, quiero reservar Lo de Beba para el día ${dateForMsg}. Quisiera coordinar el pago de los $10.000 de seña.`;
+                    
+                    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+                    window.closeUserBookingModal();
+                });
+            }
+
+            // Formulario de Contacto
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const messageText = document.getElementById('message').value;
+
+                    const text = `¡Hola! Me contacto desde la web de Lo de Beba.%0A%0A*Mi nombre:* ${name}%0A*Mi email:* ${email}%0A*Mi teléfono:* ${phone}%0A%0A*Mensaje:*%0A${messageText}`;
+                    const phoneNumber = "5491131668729";
+                    
+                    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+                    showToast("Redirigiendo a WhatsApp");
+                    e.target.reset();
+                });
+            }
+
+            const adminModal = document.getElementById('admin-modal');
+            const adminModalContent = document.getElementById('admin-modal-content');
             
-            const [y, m, d] = selectedDateToBook.split('-');
-            const dateForMsg = `${d}/${m}/${y}`;
-            const phoneNumber = "5491131668729"; 
-            const message = `Hola, quiero reservar Lo de Beba para el día ${dateForMsg}. Quisiera coordinar el pago de los $10.000 de seña.`;
+            window.openAdminModal = () => {
+                if (isAdminMode) {
+                    // Desactivar admin si ya está activo
+                    isAdminMode = false;
+                    const indicator = document.getElementById('admin-indicator');
+                    if(indicator) indicator.classList.add('hidden');
+                    showToast("Modo Administrador desactivado");
+                    renderCalendar();
+                    return;
+                }
+                
+                const passInput = document.getElementById('admin-password');
+                const errorText = document.getElementById('admin-error');
+                if(passInput) passInput.value = '';
+                if(errorText) errorText.classList.add('hidden');
+                
+                if (adminModal) {
+                    adminModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        if(adminModalContent) adminModalContent.classList.remove('scale-95', 'opacity-0');
+                        if(passInput) passInput.focus();
+                    }, 10);
+                }
+            };
+
+            window.closeAdminModal = () => {
+                if (adminModalContent) {
+                    adminModalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        if (adminModal) adminModal.classList.add('hidden');
+                    }, 300);
+                }
+            };
+
+            const openAdminBtn = document.getElementById('open-admin-modal');
+            if(openAdminBtn) openAdminBtn.addEventListener('click', window.openAdminModal);
             
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-            closeUserBookingModal();
-        });
-
-        // Formulario de Contacto
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const messageText = document.getElementById('message').value;
-
-            const text = `¡Hola! Me contacto desde la web de Lo de Beba.%0A%0A*Mi nombre:* ${name}%0A*Mi email:* ${email}%0A*Mi teléfono:* ${phone}%0A%0A*Mensaje:*%0A${messageText}`;
-            const phoneNumber = "5491131668729";
+            const closeAdminBtn = document.getElementById('close-admin-modal');
+            if(closeAdminBtn) closeAdminBtn.addEventListener('click', window.closeAdminModal);
             
-            window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-            showToast("Redirigiendo a WhatsApp");
-            e.target.reset();
-        });
+            const adminBackdrop = document.getElementById('admin-modal-backdrop');
+            if(adminBackdrop) adminBackdrop.addEventListener('click', window.closeAdminModal);
 
-        const adminModal = document.getElementById('admin-modal');
-        const adminModalContent = document.getElementById('admin-modal-content');
-        
-        const openAdminModal = () => {
-            if (isAdminMode) {
-                // Desactivar admin si ya está activo
-                isAdminMode = false;
-                document.getElementById('admin-indicator').classList.add('hidden');
-                showToast("Modo Administrador desactivado");
+            const adminForm = document.getElementById('admin-login-form');
+            if (adminForm) {
+                adminForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const passInput = document.getElementById('admin-password');
+                    const pass = passInput ? passInput.value : '';
+                    if (pass === 'BEBA2026') {
+                        isAdminMode = true;
+                        const indicator = document.getElementById('admin-indicator');
+                        if(indicator) indicator.classList.remove('hidden');
+                        window.closeAdminModal();
+                        showToast("Modo Administrador Activado", "success");
+                        renderCalendar();
+                    } else {
+                        const errorEl = document.getElementById('admin-error');
+                        if (errorEl) {
+                            errorEl.classList.remove('hidden');
+                            setTimeout(() => errorEl.classList.add('hidden'), 3000);
+                        }
+                    }
+                });
+            }
+
+            window.toggleAdminBooking = (dateStr) => {
+                if (bookedDates[dateStr]) {
+                    delete bookedDates[dateStr];
+                    showToast(`Día ${dateStr} liberado`, "success");
+                } else {
+                    bookedDates[dateStr] = true;
+                    showToast(`Día ${dateStr} bloqueado`, "success");
+                }
+                localStorage.setItem('beba_reservas', JSON.stringify(bookedDates));
                 renderCalendar();
-                return;
-            }
-            document.getElementById('admin-password').value = '';
-            document.getElementById('admin-error').classList.add('hidden');
-            adminModal.classList.remove('hidden');
-            setTimeout(() => {
-                adminModalContent.classList.remove('scale-95', 'opacity-0');
-                document.getElementById('admin-password').focus();
-            }, 10);
-        };
+            };
 
-        const closeAdminModal = () => {
-            adminModalContent.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                adminModal.classList.add('hidden');
-            }, 300);
-        };
-
-        document.getElementById('open-admin-modal').addEventListener('click', openAdminModal);
-        document.getElementById('close-admin-modal').addEventListener('click', closeAdminModal);
-        document.getElementById('admin-modal-backdrop').addEventListener('click', closeAdminModal);
-
-        document.getElementById('admin-login-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const pass = document.getElementById('admin-password').value;
-            if (pass === 'BEBA2026') {
-                isAdminMode = true;
-                document.getElementById('admin-indicator').classList.remove('hidden');
-                closeAdminModal();
-                showToast("Modo Administrador Activado", "success");
-                renderCalendar();
-            } else {
-                const errorEl = document.getElementById('admin-error');
-                errorEl.classList.remove('hidden');
-                setTimeout(() => errorEl.classList.add('hidden'), 3000);
-            }
-        });
-
-        // Alternar reservas directamente como Administrador
-        const toggleAdminBooking = (dateStr) => {
-            if (bookedDates[dateStr]) {
-                delete bookedDates[dateStr];
-                showToast(`Día ${dateStr} liberado`, "success");
-            } else {
-                bookedDates[dateStr] = true;
-                showToast(`Día ${dateStr} bloqueado`, "success");
-            }
-            // Guardar en localStorage
-            localStorage.setItem('beba_reservas', JSON.stringify(bookedDates));
+            // Iniciar App
             renderCalendar();
-        };
-
-        // Iniciar App
-        renderCalendar();
+        });
     </script>
 </body>
 </html>
