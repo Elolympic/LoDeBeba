@@ -340,9 +340,9 @@
         </div>
     </footer>
 
-    <!-- Modal Video Vertical a Pantalla Completa (Optimizado para Celular sin interferencia de controles) -->
+    <!-- Modal Video Vertical a Pantalla Completa con Autoplay y controles normales habilitados -->
     <div id="video-modal" class="fixed inset-0 z-[115] hidden bg-black/95 flex flex-col backdrop-blur-md">
-        <div class="flex justify-end items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent absolute top-0 w-full">
+        <div class="flex justify-end items-center p-4 md:p-6 text-white z-20 bg-gradient-to-b from-black/80 to-transparent absolute top-0 w-full">
             <button onclick="closeVideoModal()" class="text-3xl md:text-4xl hover:text-orange-500 transition drop-shadow-md focus:outline-none">
                 <i class="fas fa-times"></i>
             </button>
@@ -350,9 +350,12 @@
         
         <div class="flex-1 w-full h-full flex items-center justify-center p-2 sm:p-6 md:p-12 pt-16">
             <div class="w-full max-w-sm md:max-w-4xl h-[75vh] md:aspect-video bg-zinc-950 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative border border-zinc-800 flex items-center justify-center">
+                
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                     <i class="fas fa-spinner fa-spin text-orange-500 text-4xl"></i>
                 </div>
+                
+                <!-- El iframe recibe el parámetro autoplay=1 y controles habilitados -->
                 <iframe id="video-iframe" src="" width="100%" height="100%" allow="autoplay; fullscreen" class="relative z-10 w-full h-full border-0"></iframe>
             </div>
         </div>
@@ -494,12 +497,13 @@
                 });
             });
 
-            /* --- VIDEO MODAL LOGIC --- */
+            /* --- VIDEO MODAL LOGIC CON AUTOPLAY Y CONTROLES NORMALES HABILITADOS --- */
             window.openVideoModal = (url) => {
                 const modal = document.getElementById('video-modal');
                 const iframe = document.getElementById('video-iframe');
                 if (modal && iframe) {
-                    iframe.src = url;
+                    const autoPlayUrl = url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`;
+                    iframe.src = autoPlayUrl;
                     modal.classList.remove('hidden');
                     document.body.style.overflow = 'hidden';
                 }
