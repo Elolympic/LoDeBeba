@@ -340,7 +340,7 @@
         </div>
     </footer>
 
-    <!-- Modal Video Vertical a Pantalla Completa (Optimizado para Celular) -->
+    <!-- Modal Video Vertical a Pantalla Completa (Optimizado para Celular sin interferencia de controles) -->
     <div id="video-modal" class="fixed inset-0 z-[115] hidden bg-black/95 flex flex-col backdrop-blur-md">
         <div class="flex justify-end items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent absolute top-0 w-full">
             <button onclick="closeVideoModal()" class="text-3xl md:text-4xl hover:text-orange-500 transition drop-shadow-md focus:outline-none">
@@ -349,7 +349,7 @@
         </div>
         
         <div class="flex-1 w-full h-full flex items-center justify-center p-2 sm:p-6 md:p-12 pt-16">
-            <div class="w-full max-w-md md:max-w-4xl h-[80vh] md:aspect-video bg-zinc-950 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative border border-zinc-800 flex items-center justify-center">
+            <div class="w-full max-w-sm md:max-w-4xl h-[75vh] md:aspect-video bg-zinc-950 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative border border-zinc-800 flex items-center justify-center">
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                     <i class="fas fa-spinner fa-spin text-orange-500 text-4xl"></i>
                 </div>
@@ -358,7 +358,7 @@
         </div>
     </div>
 
-    <!-- Modal Galería con Carrusel, Miniaturas y Spinner de Carga -->
+    <!-- Modal Galería con Carrusel y Miniaturas -->
     <div id="gallery-modal" class="fixed inset-0 z-[110] hidden bg-black/95 flex flex-col backdrop-blur-md">
         <div class="flex justify-between items-center p-4 md:p-6 text-white z-10 bg-gradient-to-b from-black/80 to-transparent">
             <div class="text-lg md:text-xl font-bold bg-zinc-900/80 px-4 py-1.5 rounded-full border border-zinc-700 shadow-lg">
@@ -371,7 +371,6 @@
         
         <!-- Imagen Principal con Icono de Carga -->
         <div class="flex-1 relative flex items-center justify-center overflow-hidden p-2 md:p-6 pb-2">
-            <!-- Spinner indicador de carga -->
             <div id="gallery-spinner" class="absolute inset-0 flex items-center justify-center z-0">
                 <i class="fas fa-spinner fa-spin text-orange-500 text-4xl"></i>
             </div>
@@ -387,7 +386,7 @@
             </button>
         </div>
 
-        <!-- Tira de Miniaturas Inferior (Navegación directa) -->
+        <!-- Tira de Miniaturas Inferior -->
         <div class="w-full bg-zinc-950/90 py-3 px-4 border-t border-zinc-800 overflow-x-auto flex items-center justify-start md:justify-center gap-2 max-h-24 z-10" id="gallery-thumbnails">
             <!-- Rellenado dinámicamente por JS -->
         </div>
@@ -516,7 +515,7 @@
                 }
             };
 
-            /* --- GALERÍA LOGIC CON MINIATURAS INFERIORES Y SPINNER DE CARGA --- */
+            /* --- GALERÍA LOGIC CON MINIATURAS INFERIORES Y SPINNER --- */
             const galleryImages = [
                 "https://i.ibb.co/ns1WHDX7/Whats-App-Image-2026-09-12-at-9-55-30-PM-7.jpg",
                 "https://i.ibb.co/Y7NSSsZB/Whats-App-Image-2026-09-12-at-9-55-30-PM.jpg",
@@ -540,7 +539,6 @@
             
             let currentImageIndex = 0;
 
-            // Generar la barra de miniaturas inferior de forma automática
             const thumbsContainer = document.getElementById('gallery-thumbnails');
             if (thumbsContainer) {
                 thumbsContainer.innerHTML = '';
@@ -579,7 +577,6 @@
                 const spinnerEl = document.getElementById('gallery-spinner');
                 
                 if (imgEl && counterEl) {
-                    // Mostrar spinner mientras carga
                     if (spinnerEl) spinnerEl.style.display = 'flex';
                     imgEl.style.opacity = '0';
                     
@@ -593,7 +590,6 @@
                     };
                 }
 
-                // Actualizar estilo visual de las miniaturas en la barra inferior
                 if (thumbsContainer) {
                     const thumbs = thumbsContainer.children;
                     for (let t = 0; t < thumbs.length; t++) {
@@ -617,7 +613,6 @@
                 window.showImage((currentImageIndex - 1 + galleryImages.length) % galleryImages.length);
             };
 
-            // Teclado para Galería y Videos
             document.addEventListener('keydown', (e) => {
                 const gallery = document.getElementById('gallery-modal');
                 const video = document.getElementById('video-modal');
